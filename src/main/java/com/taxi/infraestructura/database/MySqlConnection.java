@@ -36,6 +36,8 @@ public class MySqlConnection implements DatabaseConnection<Connection> {
         String stringConnection = this.getStrigConnection(databaseConfiguration);
         
         try {
+            Class.forName("com.mysql.jdbc.Driver");
+            
             connection = DriverManager.getConnection(
                 stringConnection
                 , databaseConfiguration.getUser()
